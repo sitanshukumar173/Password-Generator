@@ -1,0 +1,296 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+    height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ background-color: rgb(16, 18, 24);
+ font-family: 'SUSE', sans-serif;
+}
+.main-container{
+       
+  padding: 2.5rem;
+  border-radius: 1.2rem;
+  /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); */
+  width:55%;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* background-color: rgb(29, 30, 38); */
+ background: rgba(255, 255, 255, 0.05); /* Lighter translucent glass */
+  backdrop-filter: blur(12px);          /* Soft blur effect */
+  -webkit-backdrop-filter: blur(12px);  /* Safari support */
+border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.611); /* Deep shadow for contrast */
+  color: rgb(255, 255, 255);
+}
+
+h1{
+    position:relative ;
+     font-weight: 700;
+     text-align: center;
+      font-size: 1.8rem;
+      padding-bottom: 0.5rem;
+        margin-bottom: 1.8rem;
+}
+
+h1::after{
+    content: "";
+    width: 50%;
+    height: 3px;
+    background: rgb(255, 255, 255);
+    position: absolute;
+     bottom: 0;
+     left: 50%;
+     transform: translateX(-50%);
+     border-radius: 2px;
+
+}
+
+.password-box{
+      box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.14);
+       
+       border-radius: 0.6rem;
+       position: relative;
+       height: 60px;
+        margin-bottom: 1.8rem;
+
+               background: rgba(255, 255, 255, 0.05); /* Lighter translucent glass */
+  backdrop-filter: blur(12px);          /* Soft blur effect */
+  -webkit-backdrop-filter: blur(12px);  /* Safari support */
+border: 1px solid rgba(255, 255, 255, 0.1);
+        
+    
+}
+
+#password-screen{
+     font-family: 'IBM Plex Mono', monospace;
+  font-size: 1rem;
+  letter-spacing: 0.1em; /* Optional for spacing between characters */
+  color: #e2e8f0;        /* Light color on dark background */
+
+    width: 85%;
+    height: 100%;
+    padding: 13px;
+    /* font-size: 16px; */
+    padding-left: 17px;
+   border: 1px solid rgba(255, 255, 255, 0);
+   /* color: rgb(154, 154, 154); */
+   background-color: rgba(0, 0, 0, 0);
+   
+}
+
+.copy-box{
+     /* border: 1px solid rgba(0, 0, 0, 0); */
+     position: absolute;
+   
+  /* background-color: rgb(226, 232, 240); */
+  padding: 8px;
+
+  left: 85.5%;
+  top: 15%;
+  border-radius: 50%;
+  cursor: pointer;
+
+   background: rgba(255, 255, 255, 0.05); /* Lighter translucent glass */
+  backdrop-filter: blur(12px);          /* Soft blur effect */
+  -webkit-backdrop-filter: blur(12px);  /* Safari support */
+border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#copy-button{
+    
+    height: 23.7px;
+    width: 25.5px;
+   display: block;
+}
+
+
+
+#password-screen:focus {
+    outline: none;
+  border: none;
+  background-color:none;
+  
+}
+
+.copy-box:hover {
+ background: rgba(172, 172, 172, 0.201); /* Lighter translucent glass */
+  backdrop-filter: blur(12px);          /* Soft blur effect */
+  -webkit-backdrop-filter: blur(12px);  /* Safari support */
+border: 1px solid rgba(255, 255, 255, 0.408);
+}
+
+.option-box{
+    box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.14);
+    border-radius: 0.6rem;
+    padding: 20px;
+    margin-bottom: 1.8rem;
+
+         background: rgba(0, 0, 0, 0.17); /* Lighter translucent glass */
+  backdrop-filter: blur(9px);          /* Soft blur effect */
+  -webkit-backdrop-filter: blur(9px);  /* Safari support */
+border: 1px solid rgba(255, 255, 255, 0.045);
+     
+
+}
+
+.option{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.option label {
+  font-size: 1rem;
+  /* color: #4a5568; */
+  font-weight: 500;
+}
+
+.option:last-child {
+  margin-bottom: 0;
+}
+
+.range-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+}
+
+#length-value {
+  font-weight: 600;
+  color: var(--primary-color);
+  width: 30px;
+  text-align: center;
+  background: #ffffff1f;
+  border-radius: 4px;
+  padding: 2px 5px;
+}
+
+input[type="range"] {
+  accent-color: rgba(123, 132, 145, 0.812);
+  
+  height: 5px;
+  cursor: pointer;
+  flex: 1;
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.314) ;
+  appearance: none;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  transition: all 0.3s;
+}
+
+input[type="checkbox"]:checked {
+  background-color: rgba(98, 121, 180, 0.373);
+}
+
+input[type="checkbox"]:checked::after {
+  content: "\2714";
+  position: absolute;
+  color: rgb(255, 255, 255) ;  
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+}
+
+
+.button-password{
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(45deg, rgb(0, 0, 0), rgb(33, 23, 41));
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 8px rgba(43, 88, 118, 0.2);
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: 0.7px solid rgba(255, 255, 255, 0.367);
+}
+
+
+
+.button-password {
+  position: relative;
+  overflow: hidden;
+  background-size: 200% 100%;
+  background-position: left center;
+  transition: transform 0.3s ease, background-position 1s ease;
+  
+}
+
+.button-password::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(0, 4, 16, 0.511) 0%,
+    rgba(57, 73, 104, 0.529) 50%,
+    rgba(0, 4, 16, 0.511)  100%
+  );
+  transition: left 1s ease;
+  pointer-events: none;
+}
+
+.button-password:hover {
+  transform: translateY(-2px);
+}
+
+.button-password:hover::before {
+  left: 0%;
+}
+
+.strength-container p {
+  font-size: 0.9rem;
+  color: #ffffff;
+  margin-bottom: 0.6rem;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+}
+
+
+.progress-container{
+      height: 10px;
+  background-color: #e2dcdc3f;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+  overflow: hidden;
+  box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.307)
+}
+
+.progress-bar{
+      height: 100%;
+  width: 0;
+  min-width: 5%;
+  background-color: rgb(24, 95, 237);
+  transition: all 0.3s ease;
+  border-radius: 5px;
+}
+
+
+
